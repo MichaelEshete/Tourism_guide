@@ -1,0 +1,19 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style-type: none;
+}
+html,
+body {
+  transition: all 0.3s ease;
+  font-family: "Rubik", sans-serif;
+  background-color: #fff;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+::-webkit-scrollbar {
+  display: none;
+}
