@@ -9,11 +9,9 @@ const AdminDashboard = (props) => {
   };
   return (
     <div className={classes["dashboard-container"]}>
-      {/* <img src={bg} alt="bg" /> */}
       <div className={classes["dashboard-center"]}>
         <h1>{User}</h1>
-        {/* <Link to={"/available-edirr"}>Viewprofile</Link> */}
-        {/* <Link onClick={createHandler}>Create eDirr</Link> */}
+       
       </div>
     </div>
   );
