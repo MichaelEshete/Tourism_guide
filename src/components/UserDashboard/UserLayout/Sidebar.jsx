@@ -40,10 +40,10 @@ const Sidebar = () => {
           </li>
         </ul>
       </nav>
-      <div className={classes["sidebar-footer"]}>
+      {/* <div className={classes["sidebar-footer"]}>
         <p>designed by eDirr team</p>
         <p>&copy;copyRight All reserved</p>
-      </div>
+      </div> */}
     </div>
   );
 };
