@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import classes from "./UserNavigation.module.css";
 import logo from "../../../img/logo.png";
-// import logo1 from "../../../img/eDirr.png";
 import profile from "../../../img/pexels-photo-614810.png";
 import { AiOutlineSearch } from "react-icons/ai";
 import { IoIosNotificationsOutline, IoIosChatbubbles } from "react-icons/io";
@@ -77,9 +76,7 @@ const UserNavigation = () => {
           )}
         </div>
       </div>
-      <i>
-        <IoIosChatbubbles />
-      </i>
+      
     </nav>
   );
 };

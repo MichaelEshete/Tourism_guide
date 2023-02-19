@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import classes from "./UserDashboard.module.css";
+import UserLayout from "../../UserDashboard/UserLayout/UserLayout";
 
 const Additems = (props) => {
   const createHandler = () => {
@@ -12,7 +13,17 @@ const Additems = (props) => {
     title: '',
     file: null
   })
+  const [postImage, setPostImage] = useState();
+  const onFileHandler =  async (e) => {
+    const file = e.target.files[0];
+    const base64 = await convertToBase64(file);
+    console.log(base64);
+    setPostImage(base64);
+  }
+
+
   const handleSubmit = () => {
+     
     // const title = formValue.title;
     // const discription = formValue.description;
     // const file = formValue.file;
@@ -39,7 +50,7 @@ const Additems = (props) => {
         Accept: "application/json",
         "Access-Control-Allow-Origin": "*",
       },
-      body: JSON.stringify({ disc, tit}),
+      body: JSON.stringify({ disc, tit,postImage}),
     }).then((res) => res.json()) 
       .then(() => {
         console.log(formValue, "userRegister");
@@ -48,6 +59,7 @@ const Additems = (props) => {
 
 
   return (
+    <UserLayout>
     <div className={classes["addItem-main-container"]}>
       {/* <img src={bg} alt="bg" /> */}
       <div className={classes["addItem-container"]}>
@@ -73,12 +85,7 @@ const Additems = (props) => {
                 discription: e.target.value
               }))
             }} />
-            <input type="file" accept=".zip" onChange={(e) => {
-              setFormValues((prevState) => ({
-                ...prevState,
-                file: e.target.files[0]
-              }))
-            }} />
+            <input type="file" lable="Image" name="myFile" id='file-upload' accept='.jpeg, .png, .jpg' onChange={(e) =>onFileHandler(e)}  />
             <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-around', marginTop: '30px' }}>
 
               <button className={classes['addItem-button']} type="submit" >submit</button>
@@ -90,6 +97,20 @@ const Additems = (props) => {
         </form>
       </div>
     </div>
+    </UserLayout>
   );
 };
 export default Additems;
+
+function convertToBase64(file){
+  return new Promise((resolve, reject) => {
+    const fileReader = new FileReader();
+    fileReader.readAsDataURL(file);
+    fileReader.onload = () => {
+      resolve(fileReader.result)
+    };
+    fileReader.onerror = (error) => {
+      reject(error)
+    }
+  })
+}

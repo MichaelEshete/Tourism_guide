@@ -8,6 +8,7 @@ import { RiAccountPinCircleLine } from "react-icons/ri";
 import { MdPayment, MdEventAvailable } from "react-icons/md";
 import { CiSquareQuestion } from "react-icons/ci";
 import Additems from "../Dashboard/AddItem";
+
 const Sidebar = () => {
   return (
     <div className={classes["sidebar-container"]}>
@@ -33,6 +34,12 @@ const Sidebar = () => {
             </Link>
           </li>
           <li>
+            <Link to={"/ViewItem"}>
+              {/* < /> */}
+              &nbsp; view items
+            </Link>
+          </li>
+          <li>
             <Link to={"/"}>
               <FiLogOut />
               &nbsp; Log Out
@@ -40,10 +47,7 @@ const Sidebar = () => {
           </li>
         </ul>
       </nav>
-      {/* <div className={classes["sidebar-footer"]}>
-        <p>designed by eDirr team</p>
-        <p>&copy;copyRight All reserved</p>
-      </div> */}
+     
     </div>
   );
 };
