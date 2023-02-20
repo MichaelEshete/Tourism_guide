@@ -7,8 +7,8 @@ import list from "../../../../src/img/list.png";
 import {GoDiffAdded} from 'react-icons/go'
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-const ViewItem = () => {
-    const email= localStorage.getItem("email");
+const AdminViewItem = () => {
+    const email= "hello";
   var reqemail;
   const [items, setitems] = useState([]);
   var itemsname;
@@ -16,7 +16,7 @@ const ViewItem = () => {
   
   useEffect(() => {
     const fetchdata = async () =>{
-      const data = await axios.post("http://localhost:5000/Profile", {
+      const data = await axios.post("http://localhost:5000/list", {
           email,
           ContentType: "application/json",
           Accept: "application/json",
@@ -47,12 +47,14 @@ const ViewItem = () => {
         <h2>Customer Items</h2>
         <table>
           <tr>
+            <th>User</th>
             <th>Title</th>
             <th>Description</th>
             <th>File</th>
           </tr>
         {items.map((item, index) => (
           <tr key={index}>
+              <td>{ item.userName }</td>
               <td>{ item.title }</td>
               <td>{ item.description }</td>
               <td>
@@ -67,4 +69,4 @@ const ViewItem = () => {
     </UserLayout>
   );
 };
-export default ViewItem;
+export default AdminViewItem;

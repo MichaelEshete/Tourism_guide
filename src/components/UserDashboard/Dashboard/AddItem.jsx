@@ -3,6 +3,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import classes from "./UserDashboard.module.css";
 import UserLayout from "../../UserDashboard/UserLayout/UserLayout";
+import { isDisabled } from "@testing-library/user-event/dist/utils";
 
 const Additems = (props) => {
   const createHandler = () => {
@@ -87,7 +88,6 @@ const Additems = (props) => {
             }} />
             <input type="file" lable="Image" name="myFile" id='file-upload' accept='.jpeg, .png, .jpg' onChange={(e) =>onFileHandler(e)}  />
             <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-around', marginTop: '30px' }}>
-
               <button className={classes['addItem-button']} type="submit" >submit</button>
 
               <Link className={classes['addItem-cancel-link']} id="cancel" to={"/dashboard"}  >cancel</Link>

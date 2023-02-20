@@ -10,6 +10,7 @@ import { CiSquareQuestion } from "react-icons/ci";
 import Additems from "../Dashboard/AddItem";
 
 const Sidebar = () => {
+  const role = localStorage.getItem("role")
   return (
     <div className={classes["sidebar-container"]}>
       <div className={classes["sidebar-toggler"]}>
@@ -26,13 +27,14 @@ const Sidebar = () => {
           </li>
           
           
-           
-          <li>
-            <Link to={"/Additem"}>
-              {/* <Additems /> */}
-              &nbsp; Add item
-            </Link>
-          </li>
+          {role == "user" && 
+            <li>
+              <Link to={"/Additem"}>
+                {/* <Additems /> */}
+                &nbsp; Add item
+              </Link>
+            </li>
+          }  
           <li>
             <Link to={"/ViewItem"}>
               {/* < /> */}

@@ -1,7 +1,7 @@
 .sidebar-container {
   width: calc(10% + 125px);
   background-color: #414244;
-  height: 89vh;
+  height: 100%;
   box-shadow: 1px 1px 5px #0003;
   color: white;
 }

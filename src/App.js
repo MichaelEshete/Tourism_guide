@@ -3,6 +3,8 @@ import SignUpAdmin from "./components/Auth/SignUp/SignUpAdmin";
 import Additems from "./components/UserDashboard/Dashboard/AddItem";
 import AdminDashboard from "./components/UserDashboard/Dashboard/AdminDashboard";
 import ViewItem from "./components/UserDashboard/Dashboard/ViewItem";
+import AdminViewItem from "./components/UserDashboard/Dashboard/AdminViewItem";
+
 import Landing from "./pages/Landing";
 import LogIn from "./pages/LogIn";
 import Register from "./pages/Register";
@@ -27,6 +29,8 @@ function App() {
         
         <Route path="/Additem" element={<Additems/>}/>
         <Route path="/ViewItem" element={<ViewItem/>}/>
+        <Route path="/AdminViewItem" element={<AdminViewItem/>}/>
+
 
         {/* </UserContext.Provider> */}
       </Routes>

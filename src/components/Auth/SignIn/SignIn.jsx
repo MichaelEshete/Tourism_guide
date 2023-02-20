@@ -35,23 +35,17 @@ const SignIn = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data.role, "login");
-        if (data.status == "ok" && data.role =="user") {
-          console.log(data.role);
-         
-          alert("login successful user");
-          window.localStorage.setItem("token", data.data);
+        localStorage.setItem("role", data.role)
+        localStorage.setItem("email", data.email)
+        window.localStorage.setItem("token", data.data);
+        if (data.status == "ok" && data.role =="user") {         
+          // alert("login successful user");
           window.location.href = "./dashboard";
-
-          console.log(data.data);
         }
         else if (data.status == "ok" && data.role=="admin") {
-         
-          alert("login successful admin");
-          window.localStorage.setItem("token", data.data);
           window.location.href = "./adminDashboard";
         }
-      });
+      })
 
     // alert(form.fullName + ' ' + form.password);
 };

@@ -106,10 +106,10 @@ const SignUp = () => {
             id="check"
             value={form.check}
           onChange={handleChange}/>
-            <span>
+            {/* <span>
               By continuing, you agree to our{" "}
               <Link to={"/"}>Terms of Serves</Link>
-            </span>
+            </span> */}
           </div>
           <div className={classes["sign-btn"]}>
             <button type='submit'>sign up</button>
