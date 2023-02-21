@@ -11,6 +11,7 @@ import Additems from "../Dashboard/AddItem";
 
 const Sidebar = () => {
   const role = localStorage.getItem("role")
+  let viewItemRoute = role == "user" ?  "/ViewItem" : "/AdminViewItem"
   return (
     <div className={classes["sidebar-container"]}>
       <div className={classes["sidebar-toggler"]}>
@@ -34,9 +35,9 @@ const Sidebar = () => {
                 &nbsp; Add item
               </Link>
             </li>
-          }  
+          }   
           <li>
-            <Link to={"/ViewItem"}>
+            <Link to={viewItemRoute}>
               {/* < /> */}
               &nbsp; view items
             </Link>

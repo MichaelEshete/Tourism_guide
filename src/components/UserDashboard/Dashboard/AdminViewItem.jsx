@@ -16,7 +16,7 @@ const AdminViewItem = () => {
   
   useEffect(() => {
     const fetchdata = async () =>{
-      const data = await axios.post("http://localhost:5000/list", {
+      const data = await axios.get("http://localhost:5000/list", {
           email,
           ContentType: "application/json",
           Accept: "application/json",

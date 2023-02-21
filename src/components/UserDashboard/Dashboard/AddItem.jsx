@@ -1,11 +1,12 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import classes from "./UserDashboard.module.css";
 import UserLayout from "../../UserDashboard/UserLayout/UserLayout";
 import { isDisabled } from "@testing-library/user-event/dist/utils";
 
 const Additems = (props) => {
+  const navigate = useNavigate();
   const createHandler = () => {
     props.onCreate()
   };
@@ -42,6 +43,7 @@ const Additems = (props) => {
     const disc = formValue.discription;
     const tit = formValue.title;
     console.log(disc+tit+"ere");
+    const email = localStorage.getItem('email')
     
     fetch("http://localhost:5000/addItems", {
       method: "POST",
@@ -51,10 +53,11 @@ const Additems = (props) => {
         Accept: "application/json",
         "Access-Control-Allow-Origin": "*",
       },
-      body: JSON.stringify({ disc, tit,postImage}),
+      body: JSON.stringify({ disc, tit, postImage, email}),
     }).then((res) => res.json()) 
       .then(() => {
         console.log(formValue, "userRegister");
+        navigate("/viewItem")
       });
   }
 
