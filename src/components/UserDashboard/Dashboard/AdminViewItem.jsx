@@ -24,7 +24,7 @@ const AdminViewItem = () => {
       console.log(data);
           console.log("pro",data.data);
           setitems(data.data  );
-      console.log(items); 
+        console.log(items); 
       
       };
      
@@ -54,7 +54,7 @@ const AdminViewItem = () => {
           </tr>
         {items.map((item, index) => (
           <tr key={index}>
-              <td>{ item.userName }</td>
+              <td>{ item.email }</td>
               <td>{ item.title }</td>
               <td>{ item.description }</td>
               <td>
